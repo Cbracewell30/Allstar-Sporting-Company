@@ -1,0 +1,26 @@
+{
+  "name": "remember-it",
+  "version": "1.0.0",
+  "description": "A App that allows users to save usernames and passwords",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cbracewell30/remember-it.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cbracewell30/remember-it/issues"
+  },
+  "homepage": "https://github.com/Cbracewell30/remember-it#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  }
+}
