@@ -12,7 +12,3 @@ app.use(express.urlencoded({ extended: true }));
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
-
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
