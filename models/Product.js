@@ -4,18 +4,14 @@ const Store = require("./store");
 
 // Creating Products Model
 
-class Products extends Model {}
+class Product extends Model {}
 
-Products.init({
+Product.init({
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
-  },
-  store_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
   },
   price: {
     type: DataTypes.DECIMAL(10, 2),
@@ -24,7 +20,6 @@ Products.init({
       isDecimal: true,
     },
   },
-
   stock: {
     type: DataTypes.INTEGER,
     defaultValue: 10,
@@ -39,6 +34,14 @@ Products.init({
       key: "id",
     },
   },
+
+  rating_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "rating",
+      key: "id",
+    },
+  },
 });
 
-module.exports = Products;
+module.exports = Product;

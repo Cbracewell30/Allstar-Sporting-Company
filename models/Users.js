@@ -1,17 +1,24 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const Store = require("./store");
 const bcrypt = require("bcrypt");
 
 class User extends Model {}
 
-Store.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -21,7 +28,6 @@ Store.init(
         isEmail: true,
       },
     },
-
     store_id: {
       type: DataTypes.INTEGER,
       references: {

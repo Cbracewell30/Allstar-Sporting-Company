@@ -9,22 +9,6 @@ Rate.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  store_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "store",
-      key: "id",
-    },
-  },
-  product_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "Product",
-      key: "id",
-    },
-  },
 });
 
 module.exports = Rate;
