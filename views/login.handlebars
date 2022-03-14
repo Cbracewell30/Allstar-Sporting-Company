@@ -1,9 +1,10 @@
 <div class="row justify-space-between-md">
+  {{!-- Login Section --}}
   <div class="login-card">
     <h2 class="page-title">Login to All Star Sporting Goods Inventory</h2>
     <form class="form login-form">
       <div class="form-group">
-        <label for="username-input">Username:</label>
+        <label for="username-login">Username:</label>
         <input class="form-input" type="text" id="email-login" />
       </div>
       <div class="form-group">
@@ -15,6 +16,8 @@
       </div>
     </form>
   </div>
+
+  {{!-- Sign-up Section --}}
   <div class="login-card">
     <h2 class="page-title">Signup for All Star Sporting Goods Inventory</h2>
     <form class="form signup-form">
@@ -27,7 +30,7 @@
         <input class="form-input" type="text" id="email-signup" />
       </div>
       <div class="form-group">
-          <label for="store-signup">Which store do you work at? (1: Chicago 2: Milwaukee 3: St. Louis)</label>
+          <label for="store-signup">Which store do you work at? Please enter a number (1: Chicago 2: Milwaukee 3: St. Louis).</label>
           <input class="form-input" type="number" id="store-id" />
       </div>
       <div class="form-group">
@@ -41,4 +44,5 @@
   </div>
 </div>
 
+{{!-- reference login.js in public/js folder --}}
 <script src="./js/login.js"></script>
