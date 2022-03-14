@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Star Sporting Goods - Inventory </title>
+  {{!-- NEED STYLE/JS CREATED AND ADDED HERE --}}
+  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css"> --}}
+</head>
+
+<body>
+  <header>
+    <h1>All Star Sporting Goods Total Inventory Login </h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    {{!-- reference login.js file that lives in public/js folder --}}
+    <a href="/login">Login</a>
+    {{/if}}
+
+  </nav>
+  <main>
+    <aside>
+      <h2>Check Inventory</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  
+  {{#if loggedIn}}
+  {{!-- refercne logout.js file that live in public/js folder --}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+
+</html>
