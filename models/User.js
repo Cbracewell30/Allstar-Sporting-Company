@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
-class User extends Model {}
+class User extends Model { }
 
 User.init(
   {
@@ -10,15 +10,15 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
@@ -26,22 +26,22 @@ User.init(
       unique: true,
       validate: {
         isEmail: true,
-      },
+      }
     },
     store_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Store",
+        model: "store",
         key: "id",
-      },
+      }
     },
     password: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [8],
       },
-    },
+    }
   },
   {
     hooks: {
@@ -51,13 +51,19 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+
+      //setup for the beforeUpdate function to encrypt before saving updated password
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      }
     },
-  },
-  {
+
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "user"
   }
 );
 

@@ -1,47 +1,56 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const Store = require("./store");
 
 // Creating Products Model
 
-class Product extends Model {}
+class Product extends Model { }
 
-Product.init({
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  price: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
-    validate: {
-      isDecimal: true,
+Product.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-  },
-  stock: {
-    type: DataTypes.INTEGER,
-    defaultValue: 10,
-    validate: {
-      isNumeric: true,
+
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-  },
-  store_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "Store",
-      key: "id",
+
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      }
     },
+
+    stock: {
+      type: DataTypes.INTEGER,
+      defaultValue: 10,
+      validate: {
+        isNumeric: true,
+      }
+    },
+
+    store_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "store",
+        key: "id",
+      }
+    }
   },
 
-  rating_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "rating",
-      key: "id",
-    },
-  },
-});
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'product'
+  }
+);
 
 module.exports = Product;
