@@ -10,6 +10,10 @@ Rate.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    rating: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

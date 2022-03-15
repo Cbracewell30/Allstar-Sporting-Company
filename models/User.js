@@ -30,7 +30,7 @@ User.init(
         isEmail: true,
       },
     },
-    fkstore_id: {
+    store_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "store",
