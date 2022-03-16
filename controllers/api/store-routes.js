@@ -39,7 +39,6 @@ router.post("/", (req, res) => {
   Store.create({
     store_name: req.body.store_name,
     store_location: req.body.store_location,
-    product_id: req.body.product_id,
   })
     .then((dbStoreData) => res.json(dbStoreData))
     .catch((err) => {
