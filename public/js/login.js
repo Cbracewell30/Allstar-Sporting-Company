@@ -1,41 +1,49 @@
-const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (username && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to log in.');
-      }
+
+async function loginFormHandler(event) {
+  event.preventDefault();
+
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+
+  if (email && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/api/products');
+    } else {
+      alert(response.statusText);
     }
-  };
+  }
+}
+
   
   const signupFormHandler = async (event) => {
     event.preventDefault();
-  
-    const username = document.querySelector('#username-signup').value.trim();
+
+    const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const storeID = document.querySelector('#store-signup').value.trim();
+    const store_id = document.querySelector('#store-signup').value;
 
-    if (username && email && password && storeID) {
+    console.log(store_id);
+
+    if (name && email && password && store_id) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password, storeID }),
+        body: JSON.stringify({ name, email, password, store_id }),
         headers: { 'Content-Type': 'application/json' },
-      });
   
+      });
+
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/api/products');
       } else {
         alert('Failed to sign up.');
       }

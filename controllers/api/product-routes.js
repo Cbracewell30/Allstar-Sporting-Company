@@ -6,12 +6,18 @@ const { Product } = require('../../models');
 
 //add route to get all products, model.findAll
 router.get('/', (req, res) => {
+
     Product.findAll()
-        .then(dbProductData => res.json(dbProductData))
+       
+        .then(dbProductData => { 
+            res.render('product', dbProductData)
+        }) 
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
+        
         });
+    
 });
 
 
