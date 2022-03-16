@@ -45,8 +45,7 @@ router.get("/:id", (req, res) => {
 //add route to create, model.create
 router.post("/", (req, res) => {
   User.create({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
+    name: req.body.name,
     email: req.body.email,
     password: req.body.password,
     store_id: req.body.store_id,
