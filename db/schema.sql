@@ -1,3 +1,40 @@
-DROP DATABASE IF EXISTS sportingGoods_db;
+DROP TABLE IF EXISTS rating;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS store;
 
-CREATE DATABASE sportingGoods_db;
+
+CREATE TABLE store (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  store_name VARCHAR(30) NOT NULL,
+  store_location VARCHAR(30) NOT NULL
+  -- user_id INTEGER ,
+  -- CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE SET NULL
+);
+CREATE TABLE user (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL UNIQUE,
+  password VARCHAR(30) NOT NULL UNIQUE,
+  store_id INTEGER ,
+  CONSTRAINT store_id FOREIGN KEY (store_id) REFERENCES store(id) ON DELETE SET NULL
+);
+
+CREATE TABLE product (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) NOT NULL,
+  price INTEGER NOT NULL,
+  stock INTEGER NOT NULL,
+  store_id INTEGER ,
+  CONSTRAINT fkstore_id FOREIGN KEY (store_id) REFERENCES store(id) ON DELETE SET NULL
+);
+
+CREATE TABLE rating (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  product_id INTEGER ,
+  store_id INTEGER ,
+  value VARCHAR(15) NOT NULL,
+  CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES product(id) ,
+  CONSTRAINT fk_store FOREIGN KEY (store_id) REFERENCES store(id)
+);

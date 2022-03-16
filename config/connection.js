@@ -1,15 +1,25 @@
-require("dotenv").config();
-
+// adding sequelize package
 const Sequelize = require("sequelize");
 
-const sequelize = process.env.JAWSDB_URL
-  ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+// adding dotenv
+require("dotenv").config();
+
+let sequelize;
+
+// if connected to Heroku it the app will use JAWSDB instead of local host for database
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
+    {
       host: "localhost",
       dialect: "mysql",
-      dialectOptions: {
-        decimalNumbers: true,
-      },
-    });
-
+      port: 3306,
+    }
+  );
+}
+console.log(sequelize);
 module.exports = sequelize;
