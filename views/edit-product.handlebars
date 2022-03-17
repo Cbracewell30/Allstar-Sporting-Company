@@ -1,0 +1,28 @@
+<div class="card">
+    <h3 class="card-header">Edit Product:</h3>
+    <form class="card-body edit-products-form">
+        <label for="products-name" class="form-label">What should the name of this product be?:</label>
+        <input name="products-name" type="text" class="form-input" value="{{product.name}}"/>
+
+        <label for="price" class="form-label">Price:</label>
+        <input name="price" type="number" class="form-input" value="{{product.price}}"/>
+
+        <label for="stock" class="form-label">How many are still in stock?:</label>
+        <input name="stock" class="form-input" id="stock" type="number" value="{{product.stock}}"/>
+
+        <label for="store_id" class="form-label">Which store is this item at? (1: Chicgao, 2: St. Louis, 3: Milwaukee)</label>
+        <input name="store_id" class="form-input" id="store_id" type="number" value="{{product.store_id}}"/>
+
+        <label for="filename" class="form-label">Are you editing the image for this item? If yes, please insert URL.</label>
+        <input name="filename" class="form-input" id="filename" type="text" value="{{product.filename}}"/>
+
+        <label for="description" class="form-label">If you uploaded a new image, please add a description.</label>
+        <input name="description" class="form-input" id="description" type="text" value="{{product.description}}" />
+
+        <button type="submit" class="btn">Update products</button>
+        <button type="button" class="delete-products-btn btn">Delete products</button>
+    </form>
+</div>
+
+<script src="/js/delete-products" ></script>
+<script src="/js/edit-products"></script>

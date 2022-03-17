@@ -1,16 +1,14 @@
-{{!-- <div class="d-flex flex-row bd-highlight mb-3">
+{{#if products.length}}
+<section>
+    <h2>Inventory:</h2>
+    {{#each products as |product|}}
+        {{> products-info product}}
+    {{/each}}
+</section>
+{{/if}}
 
-  <img src="../public/images/bat.jpg" class="d-flex justify-content-around " alt="Baseball bat"/>
-
-<img src="../public/images/baseball.jpg" class="d-flex justify-content-around "alt="Baseball"/>
-
-<img src="../public/images/football.jpg"  class="d-flex justify-content-around " alt="Football "/>
-
-<img src="../public/images/cleats.jpg"  alt="Football cleats"/>
-</div> --}}
+<button type="submit" id="new-products" class="btn"><a class="link" href="/api/products/new">+ New Product</a></button>
 
 
-<div>
-  <h2> Welcome to AllStar Sporting Goods!</h2>
-  <p> You are now logged in!</p>
-</div>
+<script src="/js/add-products.js"></script>
+
