@@ -5,7 +5,6 @@ const sequelize = require('../config/connection');
 const { User, Product, Rate, Store } = require('../models');
 //add models request here
 
-
 //add route to get all, model.findAll
 router.get('/', (req, res) => {  
     
@@ -30,23 +29,29 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-
 router.get('/products', (req,res) => {
     if(req.session.loggedIn) {
         res.render('new-product');
     }
-})
+});
 
-// //add route to get 1, model.findOne
-// router.get('/:id', (req, res) => { });
-
+//add route to get 1, model.findOne
+router.get('/products/:id', (req, res) => { 
+    if(req.session.loggedIn) {
+        res.render('product');
+    }
+});
 
 // //add route to create, model.create
 // router.post('/', (req, res) => { });
 
 
 // //add route to update 1, model.update
-// router.put('/:id', (req, res) => { });
+// router.put('/product/:id', (req, res) => {
+//     if(req.session.loggedIn) {
+//         res.render('edit-product');
+//     }
+//  });
 
 
 // //add route to delete 1, model.destroy

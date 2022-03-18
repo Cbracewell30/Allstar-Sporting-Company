@@ -26,15 +26,22 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-      attributes: ['id', 'name', 'price', 'stock', 'store_id', 'filename', 'description']
+      attributes: ['id', 'name', 'price', 'stock', 'store_id', 'filename', 'description'],
+      include: [{
+        model: Store,
+        attributes: ['id']
+      }]
   })
     .then((dbProductData) => {
+      console.log(dbProductData);
+      // const product = dbProductData.map({ plain: true });
+      res.render("edit-product", {dbProductData});
+
       //display message if id value has no product
       if (!dbProductData) {
         res.status(404).json({ message: "No product has this id." });
         return;
       }
-      res.json(dbProductData);
     })
     .catch((err) => {
       console.log(err);

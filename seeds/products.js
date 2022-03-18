@@ -6,7 +6,7 @@ const productData = [
     price: "75.00",
     stock: "11",
     store_id: "1",
-    filename: 'bat.jpg',
+    filename: 'bat.jpeg',
     description: 'Image of wooden baseball bat'
   },
   {
@@ -14,7 +14,7 @@ const productData = [
     price: "5.00",
     stock: "100",
     store_id: "2",
-    filename: 'Baseball..jpg',
+    filename: 'Baseball.jpeg',
     description: 'Baseball on the ground'
   },
   {
@@ -22,7 +22,7 @@ const productData = [
     price: "50.00",
     stock: "3",
     store_id: "1",
-    filename: 'cleats.jpg',
+    filename: 'cleats.jpeg',
     description: 'White cleats in the grass'
   },
   {
