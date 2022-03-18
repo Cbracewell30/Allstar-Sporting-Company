@@ -1,11 +1,28 @@
+
+
 <section>
     <h2>Current Inventory:</h2>
+
     <ul class="product-list">
-      {{> products-details product}}
+        {{#if product}}
+          <div class="card">
+          <div class="card-header">
+        {{#each product as |product|}}
+          {{> products-details product}}  
+        {{/each}}
+        {{else}}
+        <div class="card">
+          <div class="card-header">
+          <h3>No products found!</h3>
+          </div>
+        </div>
+      {{/if}}
+  </div>
+</div>
     </ul>
 </section>
 
-<button type="submit" id="new-products" class="btn"><a class="link" href="/api/products/">+ New Product</a></button>
+<button type="submit" id="new-products" class="btn"><a class="link" href="/products">+ New Product</a></button>
 
 <script src="/js/add-products.js"></script>
 

@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
     }
 });
 
-
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -31,11 +30,12 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// router.get('/login', (req,res) => {
-//     if(req.session.loggedIn) {
-//         res.redirect('/api/products')
-//     }
-// })
+
+router.get('/products', (req,res) => {
+    if(req.session.loggedIn) {
+        res.render('new-product');
+    }
+})
 
 // //add route to get 1, model.findOne
 // router.get('/:id', (req, res) => { });

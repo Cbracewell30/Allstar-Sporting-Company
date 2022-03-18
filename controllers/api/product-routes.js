@@ -6,13 +6,13 @@ const { Product, User, Rate, Store } = require("../../models");
 
 //add route to get all products, model.findAll
 router.get("/", (req, res) => {
-  res.render('new-product');
+  // res.render('new-product');
   Product.findAll({
     attributes: ['id', 'name', 'price', 'stock', 'store_id', 'filename', 'description']
-  })
-
+})
     .then((dbProductData) => {
-      res.render("product", dbProductData);
+      const product = dbProductData.map(product => product.get({ plain: true }));
+      res.render("product", {product});
     })
     .catch((err) => {
       console.log(err);
