@@ -1,3 +1,21 @@
+<nav class="nav">
+
+  {{#if loggedIn}}
+    <div>
+      <a class="link p-2" href="/api/products">Product Inventory</a>
+      <a class="link p-2" href="/api/stores"> Location</a>
+    </div>
+    <div>
+
+      <a class="link" href="/" id="logout">Logout</a>
+
+    </div>
+  {{else}}
+    <a class="link" href="/login">Login</a>
+  {{/if}}
+</nav>
+
 <div class="homepage">
-    <p>Please LOGIN to get to Inventory Pages OR if you are logged in, navigate to 'Product Inventory'.</p>
+  <p>Please LOGIN to get to Inventory Pages OR if you are logged in, navigate to
+    'Product Inventory'.</p>
 </div>
