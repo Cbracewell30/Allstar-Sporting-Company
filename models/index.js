@@ -16,7 +16,7 @@ User.belongsTo(Store, {
 });
 
 Product.belongsTo(Store, {
-  foreignKey: "id",
+  foreignKey: "store_id",
 });
 
 Store.hasMany(Product, {

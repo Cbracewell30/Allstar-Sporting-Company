@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 //add models request here
 const { Product, User, Rate, Store } = require("../../models");
 
@@ -8,11 +8,21 @@ const { Product, User, Rate, Store } = require("../../models");
 router.get("/", (req, res) => {
   // res.render('new-product');
   Product.findAll({
-    attributes: ['id', 'name', 'price', 'stock', 'store_id', 'filename', 'description']
-})
+    attributes: [
+      "id",
+      "name",
+      "price",
+      "stock",
+      "store_id",
+      "filename",
+      "description",
+    ],
+  })
     .then((dbProductData) => {
-      const product = dbProductData.map(product => product.get({ plain: true }));
-      res.render("product", {product});
+      const product = dbProductData.map((product) =>
+        product.get({ plain: true })
+      );
+      res.render("product", { product });
     })
     .catch((err) => {
       console.log(err);
@@ -26,16 +36,26 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-      attributes: ['id', 'name', 'price', 'stock', 'store_id', 'filename', 'description'],
-      include: [{
+    attributes: [
+      "id",
+      "name",
+      "price",
+      "stock",
+      "store_id",
+      "filename",
+      "description",
+    ],
+    include: [
+      {
         model: Store,
-        attributes: ['id']
-      }]
+        attributes: ["id"],
+      },
+    ],
   })
     .then((dbProductData) => {
       console.log(dbProductData);
-      // const product = dbProductData.map({ plain: true });
-      res.render("edit-product", {dbProductData});
+
+      res.render("edit-product", dbProductData.get({ plain: true }));
 
       //display message if id value has no product
       if (!dbProductData) {
@@ -57,11 +77,10 @@ router.post("/", (req, res) => {
     stock: req.body.stock,
     store_id: req.body.store_id,
     filename: req.body.filename,
-    description: req.body.description
+    description: req.body.description,
   })
     .then((dbProductData) => {
       res.json(dbProductData);
-
     })
     .catch((err) => {
       console.log(err);
@@ -110,7 +129,6 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 // router.get('/', withAuth, (req, res) => {
 //   Product.findAll({
@@ -178,7 +196,6 @@ router.delete("/:id", (req, res) => {
 //           res.status(500).json(err);
 //       });
 // });
-
 
 // router.get('/new', (req, res) => {
 //   res.render('new-product');
