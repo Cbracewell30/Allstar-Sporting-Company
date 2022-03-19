@@ -14,7 +14,7 @@ const productData = [
     price: "5.00",
     stock: "100",
     store_id: "2",
-    filename: 'Baseball.jpeg',
+    filename: 'baseball.jpeg',
     description: 'Baseball on the ground'
   },
   {
@@ -30,24 +30,24 @@ const productData = [
     price: "35.00",
     stock: "15",
     store_id: "1",
-    filename: '',
-    description: ''
+    filename: 'baseball-glove.jpeg',
+    description: 'Brown leather with red accents baseball glove.'
   },
   {
     name: "Soccer Ball",
     price: "20.00",
     stock: "25",
     store_id: "2",    
-    filename: '',
-    description: ''
+    filename: 'soccerball.jpeg',
+    description: 'Blue and yellow Adidas soccerball.'
   },
   {
     name: "Shin Gaurds",
     price: "22.00",
     stock: "12",
     store_id: "2",
-    filename: '',
-    description: ''
+    filename: 'shin-gaurds.jpeg',
+    description: 'Black Adidas shin gaurds.'
   },
   {
     name: "Knee High Socks",
