@@ -22,6 +22,21 @@ router.get("/:store_id", (req, res) => {
     where: {
       store_id: req.params.store_id,
     },
+    attributes: [
+      "id",
+      "name",
+      "price",
+      "stock",
+      "store_id",
+      "filename",
+      "description",
+    ],
+    include: [
+      {
+        model: Store,
+        attributes: ["store_name", "store_location"],
+      },
+    ],
   })
     .then((dbStoreData) => {
       console.log(dbStoreData);
