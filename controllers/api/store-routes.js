@@ -29,6 +29,7 @@ router.get("/:store_id", (req, res) => {
       "filename",
       "description",
     ],
+    // order the product page by stock in descinding order
     order: [["stock", "DESC"]],
     include: [
       {

@@ -17,18 +17,11 @@ User.belongsTo(Store, {
 
 Product.belongsTo(Store, {
   foreignKey: "store_id",
+  onDelete: "Cascade",
 });
 
 Store.hasMany(Product, {
   foreignKey: "store_id",
 });
-
-// Rate.belongsTo(Product, {
-//   foreignKey: "rating_id",
-// });
-
-// Product.hasOne(Rate, {
-//   foreignKey: "rating_id",
-// });
 
 module.exports = { Store, User, Rate, Product };

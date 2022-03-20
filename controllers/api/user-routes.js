@@ -109,8 +109,9 @@ router.delete("/", (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
+      // find one user by email
       where: {
-        email: req.body.email
+        email: req.body.email,
       },
     });
 

@@ -1,3 +1,4 @@
+// Rate Seeds
 const { Rate } = require("../models");
 
 const rateData = [

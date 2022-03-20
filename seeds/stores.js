@@ -1,3 +1,5 @@
+// Store seed
+const seed = require("seed");
 const { Store } = require("../models");
 
 const storeData = [

@@ -28,9 +28,16 @@
     <input name="store_id" class="form-input" id="store_id" type="number" />
 
     {{! not necessary, alllowed to be null }}
-    <label for="filename" class="form-label">Do you have an image for this item?
-      Insert URL/link.</label>
-    <input name="filename" class="form-input" id="filename" type="text" />
+    <form
+      ref="uploadForm"
+      id="uploadForm"
+      action="http://localhost:8000/upload"
+      method="post"
+      encType="multipart/form-data"
+    >
+      <input type="file" name="filename" id="filename" />
+
+    </form>
 
     {{! not necessary, alllowed to be null }}
     <label for="description" class="form-label">If you uploaded an image, please
