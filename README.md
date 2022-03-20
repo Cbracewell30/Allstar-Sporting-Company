@@ -63,8 +63,13 @@ Finally, to start the server you need to enter the command: __nodemon start__.
 Open the browser and go to: __http://localhost:3003/__ to open the website. 
 
 ### Demo Videos
+Below is a video on how to install the packages needed for this project.
 
-__insert video/images here__
+
+
+Below is the link to a demo of the project.
+
+
 
 
 ### Additional Packages
