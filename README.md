@@ -62,14 +62,10 @@ DB_PW='[your password for mysql]'
 Finally, to start the server you need to enter the command: __nodemon start__.
 Open the browser and go to: __http://localhost:3003/__ to open the website. 
 
+
 ### Demo Videos
-Below is a video on how to install the packages needed for this project.
-
-
-
 Below is the link to a demo of the project.
-
-
+https://drive.google.com/file/d/1_dBt6EyCps5szn0QF4cXXBP6ZSXb5UOz/view
 
 
 ### Additional Packages
