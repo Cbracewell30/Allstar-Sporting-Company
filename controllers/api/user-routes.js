@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-//add models request here
 const { User, Store } = require("../../models/");
 
 //add route to get all, model.findAll
@@ -66,7 +65,25 @@ router.post("/", (req, res) => {
 });
 
 //add route to update 1, model.update
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+  User.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      //display message if id value has no User
+      if (!dbUserData) {
+        res.status(404).json({ message: "No User has this id." });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //add route to delete 1, model.destroy
 router.delete("/", (req, res) => {
@@ -88,12 +105,12 @@ router.delete("/", (req, res) => {
     });
 });
 
-// login
+// route to access login data
 router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        email: req.body.email,
+        email: req.body.email
       },
     });
 
@@ -127,7 +144,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Logout
+// route to Logout
 router.post("/logout", (req, res) => {
   // When the user logs out, destroy the session
   if (req.session.loggedIn) {

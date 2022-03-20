@@ -1,21 +1,19 @@
 async function editFormHandler(event) {
   event.preventDefault();
 
+  //create references to product info on handlebars
   const name = document.querySelector('input[name="products-name"]').value;
   const price = document.querySelector('input[name="price"]').value;
   const stock = document.querySelector('input[name="stock"]').value;
   const storeId = document.querySelector('input[name="store_id"]').value;
-  // const filename = document.querySelector('input[name="filename"]').value;
-  // const description = document.querySelector('input[name="description"]').value;
-  console.log(name);
-  console.log(price);
+
 
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
-  console.log(id);
 
+  //apply changes to data using submitted input
   const response = await fetch(`/api/products/${id}`, {
     method: "PUT",
     body: JSON.stringify({
@@ -30,8 +28,9 @@ async function editFormHandler(event) {
     },
   });
 
+  //render page if input is good or give message to user if not good
   if (response.ok) {
-    document.location.replace("/api/products");
+    document.location.replace("/products/");
   } else {
     alert(response.statusText);
   }
@@ -40,4 +39,3 @@ async function editFormHandler(event) {
 document
   .querySelector(".edit-products-form")
   .addEventListener("submit", editFormHandler);
-// document.querySelector("#1").addEventListener("submit", editFormHandler);

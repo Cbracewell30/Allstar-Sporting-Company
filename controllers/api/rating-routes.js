@@ -1,32 +1,31 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-//add models request here
-const { Rate } = require("../../models");
+const { Rate } = require("../../models/");
 
-//add route to get all Ratings, model.findAll
+//add route to get all Rates, model.findAll
 router.get("/", (req, res) => {
-  Rating.findAll()
-    .then((dbRatingData) => res.json(dbRatingData))
+  Rate.findAll()
+    .then((dbRateData) => res.json(dbRateData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-//add route to get 1 Rating, model.findOne
+//add route to get 1 Rate, model.findOne
 router.get("/:id", (req, res) => {
-  Rating.findOne({
+  Rate.findOne({
     where: {
       id: req.params.id,
     },
   })
-    .then((dbRatingData) => {
-      //display message if id value has no Rating
-      if (!dbRatingData) {
-        res.status(404).json({ message: "No Rating has this id." });
+    .then((dbRateData) => {
+      //display message if id value has no Rate
+      if (!dbRateData) {
+        res.status(404).json({ message: "No Rate has this id." });
         return;
       }
-      res.json(dbRatingData);
+      res.json(dbRateData);
     })
     .catch((err) => {
       console.log(err);
@@ -34,34 +33,32 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//add route to create new Rating, model.create
+//add route to create new Rate, model.create
 router.post("/", (req, res) => {
-  Rating.create({
-    product_id: req.body.product_id,
-    store_id: req.body.store_id,
-    value: req.body.value,
+  Rate.create({
+    Rate: req.body.Rate
   })
-    .then((dbRatingData) => res.json(dbRatingData))
+    .then((dbRateData) => res.json(dbRateData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-//add route to update 1 Rating, model.update
+//add route to update 1 Rate, model.update
 router.put("/:id", (req, res) => {
-  Rating.update(req.body, {
+  Rate.update(req.body, {
     where: {
       id: req.params.id,
     },
   })
-    .then((dbRatingData) => {
-      //display message if id value has no Rating
-      if (!dbRatingData) {
-        res.status(404).json({ message: "No Rating has this id." });
+    .then((dbRateData) => {
+      //display message if id value has no Rate
+      if (!dbRateData) {
+        res.status(404).json({ message: "No Rate has this id." });
         return;
       }
-      res.json(dbRatingData);
+      res.json(dbRateData);
     })
     .catch((err) => {
       console.log(err);
@@ -69,20 +66,20 @@ router.put("/:id", (req, res) => {
     });
 });
 
-//add route to delete 1 Rating, model.destroy
+//add route to delete 1 Rate, model.destroy
 router.delete("/:id", (req, res) => {
-  Rating.destroy({
+  Rate.destroy({
     where: {
       id: req.params.id,
     },
   })
-    .then((dbRatingData) => {
-      //display message if id value has no Rating
-      if (!dbRatingData) {
-        res.status(404).json({ message: "No Rating has this id." });
+    .then((dbRateData) => {
+      //display message if id value has no Rate
+      if (!dbRateData) {
+        res.status(404).json({ message: "No Rate has this id." });
         return;
       }
-      res.json(dbRatingData);
+      res.json(dbRateData);
     })
     .catch((err) => {
       console.log(err);

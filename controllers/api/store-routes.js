@@ -1,14 +1,12 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-//add models request here
-const { Store, Product } = require("../../models");
+const { Store, Product } = require("../../models/");
 
 //add route to get all Stores, model.findAll
 router.get("/", (req, res) => {
   Store.findAll()
     .then((dbStoreData) => {
-      const store = dbStoreData.map((store) => store.get({ plain: true }));
-      res.render("store", { store });
+      res.json(dbStoreData);
     })
     .catch((err) => {
       console.log(err);
@@ -24,16 +22,12 @@ router.get("/:store_id", (req, res) => {
     },
   })
     .then((dbStoreData) => {
-      console.log(dbStoreData);
       //display message if id value has no Store
       if (!dbStoreData) {
         res.status(404).json({ message: "No Store has this id." });
         return;
       }
-      const product = dbStoreData.map((product) =>
-        product.get({ plain: true })
-      );
-      res.render("single-store", { product });
+      res.json(dbStoreData);
     })
     .catch((err) => {
       console.log(err);
