@@ -20,6 +20,22 @@ router.get("/:store_id", (req, res) => {
     where: {
       store_id: req.params.store_id,
     },
+    attributes: [
+      "id",
+      "name",
+      "price",
+      "stock",
+      "store_id",
+      "filename",
+      "description",
+    ],
+    order: [["stock", "DESC"]],
+    include: [
+      {
+        model: Store,
+        attributes: ["store_name", "store_location"],
+      },
+    ],
   })
     .then((dbStoreData) => {
       //display message if id value has no Store

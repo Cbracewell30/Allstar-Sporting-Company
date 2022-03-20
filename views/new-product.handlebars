@@ -1,29 +1,45 @@
-
 <div class="card">
-    <h3 class="card-header">Add A New Product:</h3>
-    <form class="card-body new-products" id="new-products">
-        <label for="products-name" class="form-label">Product Name:</label>
-        <input name="products-name" id="products-name" type="text" class="form-input"/>
+  <h3 class="card-header">Add A New Product:</h3>
+  <form class="card-body new-products" id="new-products">
+    <label for="products-name" class="form-label">Product Name:</label>
+    <input
+      name="products-name"
+      id="products-name"
+      type="text"
+      class="form-input"
+    />
 
-        <label for="price" class="form-label">Price of Individual Product:</label>
-        <input name="price" id="price" class="form-input" type="number"/>
+    <label for="price" class="form-label">Price of Individual Product:</label>
+    <input
+      name="price"
+      id="price"
+      class="form-input"
+      type="number"
+      min="0"
+      step="any"
+      value="0.00"
+    />
 
-        <label for="stock" class="form-label"># In Stock:</label>
-        <input name="stock" class="form-input" id="stock" type="number"/>
+    <label for="stock" class="form-label"># In Stock:</label>
+    <input name="stock" class="form-input" id="stock" type="number" min="0" />
 
-        <label for="store_id" class="form-label">Which store is this item at? (1: Chicgao, 2: St. Louis, 3: Milwaukee)</label>
-        <input name="store_id" class="form-input" id="store_id" type="number"/>
+    <label for="store_id" class="form-label">Which store is this item at? (1:
+      Chicgao, 2: St. Louis, 3: Milwaukee)</label>
+    <input name="store_id" class="form-input" id="store_id" type="number" />
 
-        {{!-- not necessary, alllowed to be null --}}
-        <label for="filename" class="form-label">Do you have an image for this item? Insert URL/link.</label>
-        <input name="filename" class="form-input" id="filename" type="text" />
+    {{! not necessary, alllowed to be null }}
+    <label for="filename" class="form-label">Do you have an image for this item?
+      Insert URL/link.</label>
+    <input name="filename" class="form-input" id="filename" type="text" />
 
-        {{!-- not necessary, alllowed to be null --}}
-        <label for="description" class="form-label">If you uploaded an image, please add a description.</label>
-        <input name="description" class="form-input" id="description" type="text" />
-        
-        <button type="submit" id="new-products" class="btn">Create Products</button>
-    </form>
+    {{! not necessary, alllowed to be null }}
+    <label for="description" class="form-label">If you uploaded an image, please
+      add a description.</label>
+    <input name="description" class="form-input" id="description" type="text" />
+
+    <button type="submit" id="new-products" class="btn new-products-btn">Create
+      Products</button>
+  </form>
 </div>
 
 <script src="/js/add-products.js"></script>

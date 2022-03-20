@@ -1,31 +1,70 @@
 <div class="card">
-    <h3 class="card-header">Edit Product:</h3>
-    <form class="card-body edit-products-form">
-          
-      
-        <label for="products-name" class="form-label">What should the name of this product be?:</label>
-        <input name="products-name" type="text" class="form-input" value="{{name}}"/>
+  <h3 class="card-header">Edit Product:</h3>
+  <form class="card-body edit-products-form">
 
-        <label for="price" class="form-label">Price:</label>
-        <input name="price" type="number" class="form-input" step="any" min= "0"  value="{{price}}"/>
+    <label for="products-name" class="form-label">What should the name of this
+      product be?:</label>
+    <input
+      name="products-name"
+      type="text"
+      class="form-input"
+      value="{{name}}"
+    />
 
-        <label for="stock" class="form-label">How many are still in stock?:</label>
-        <input name="stock" class="form-input" id="stock" type="number" value="{{stock}}"/>
+    <label for="price" class="form-label"> Price:</label>
+    <input
+      name="price"
+      type="number"
+      class="form-input"
+      step="any"
+      min="0"
+      value="{{price}}"
+    />
 
-        <label for="store_id" class="form-label">Which store is this item at? (1: Chicgao, 2: St. Louis, 3: Milwaukee)</label>
-        <input name="store_id" class="form-input" id="store_id" type="number" value="{{store_id}}"/>
+    <label for="stock" class="form-label"> How many are still in stock?:</label>
+    <input
+      name="stock"
+      class="form-input"
+      id="stock"
+      type="number"
+      value="{{stock}}"
+    />
 
-        <label for="filename" class="form-label">Are you editing the image for this item? If yes, please insert URL.</label>
-        <input name="filename" class="form-input" id="filename" type="text" value="{{filename}}"/>
+    <label for="store_id" class="form-label">
+      Which store is this item at? (1: Chicgao, 2: St. Louis, 3: Milwaukee)</label>
+    <input
+      name="store_id"
+      class="form-input"
+      id="store_id"
+      type="number"
+      value="{{store_id}}"
+    />
 
-        <label for="description" class="form-label">If you uploaded a new image, please add a description.</label>
-        <input name="description" class="form-input" id="description" type="text" value="{{description}}" />
+    <label for="filename" class="form-label">
+      Are you editing the image for this item? If yes, please insert URL.</label>
+    <input
+      name="filename"
+      class="form-input"
+      id="filename"
+      type="text"
+      value="{{filename}}"
+    />
 
-        <button type="submit" class="btn">Update products</button>
-        <button type="button" class="delete-products-btn btn">Delete products</button>
-    </form>
-     
+    <label for="description" class="form-label">If you uploaded a new image,
+      please add a description.</label>
+    <input
+      name="description"
+      class="form-input"
+      id="description"
+      type="text"
+      value="{{description}}"
+    />
+
+    <button type="submit" class="edit-btn btn">Update Products</button>
+    <button type="button" class="delete-products-btn btn">Delete Products</button>
+  </form>
+
 </div>
 
-<script src="/js/delete-products.js" ></script>
+<script src="/js/delete-products.js"></script>
 <script src="/js/edit-products.js"></script>

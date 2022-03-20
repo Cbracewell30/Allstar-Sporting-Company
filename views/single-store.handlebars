@@ -1,13 +1,13 @@
 <section>
-  <button type="submit" id="new-products" class="btn"><a class="link" href="/new-product">+ New Product</a></button>
+  <button type="submit" id="new-products" class="btn new-products-btn"><a class="link" href="/new-product">+ New Product</a></button>
+    
+    <h2>Current Inventory:</h2>
 
-  <h2>Current Inventory:</h2>
-
-  <ul class="product-list">
-
-    {{#if product }}
-    <div class="card">
-      <div class="card-header d-flex justify-content-between">
+    <ul class="product-list">
+      
+        {{#if product }}
+          <div class="card">
+          <div class="card-header d-flex flex-wrap">
         {{#each product as |product|}}
         <div class="p-2"> {{> products-details product}} </div>
         {{/each}}
@@ -24,4 +24,3 @@
 
 </section>
 
-<script src="/js/add-products.js"></script>

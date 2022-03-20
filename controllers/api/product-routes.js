@@ -49,7 +49,7 @@ router.post("/", (req, res) => {
     stock: req.body.stock,
     store_id: req.body.store_id,
     filename: req.body.filename,
-    description: req.body.description
+    description: req.body.description,
   })
     .then((dbProductData) => {
       res.json(dbProductData);

@@ -1,11 +1,13 @@
 <article>
-  <div class="border-danger">
-    <h4><a class="link" href="/products/{{id}}" id="{{id}}">{{name}}</a></h4>
+  <div class="">
+    <h4><a
+        class="link"
+        href="/api/products/{{id}}"
+        id="{{id}}"
+      >{{name}}</a></h4>
     <p>Price: {{price}}</p>
     <p>Current # in Stock: {{stock}}</p>
-    <p>Store Location (1: Chicgao, 2: St. Louis, 3: Milwaukee): {{store_id}}</p>
-    <p>Image of Item:
-      <img src="/images/{{filename}}" alt="{{description}}" class="img" />
-    </p>
+    <p>Store Location: {{store.store_name}}</p>
+          <img src="/images/{{filename}}" alt="{{description}}" class="img mt-4" /></p>
   </div>
 </article>
