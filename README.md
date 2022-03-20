@@ -1,10 +1,11 @@
-# remember-it
+# Allstar-Sporting-Company
 
 ### Table of Contents
 - [Description](#description)
 - [Project Files](#project-files)
-- [Images/Viseos](#images/videos)
-- [Additional Packages/Libraries](#additional-packages/libraries)
+- [Installation Instructions](#installation-instructions)
+- [Demo Videos](#demo-videos)
+- [Additional Packages](#additional-packages)
 - [Collaborators](#collaborators)
 
 
@@ -19,9 +20,14 @@ bassball page will be an option to both view and update items.
 
 ## Project Files
 - config directory(the location for the setup of the database login and sequalize)
-- db directory(the location of the sql files)
+- controllers directory(the location for the api routes and index.js to connect
+    them all)
+- db directory(the location of the initial database sql file)
 - models directory(the location for the js class models)
-- routes directory(the location for the api routes and index.js to connect them all)
+- public directory (the location of the front-end files for css and js as well as
+    the images for this project)
+- seeds directory (the location of the sample data)
+- utils directory
 - views directory(the location of the handlebars)
 - .env(database login info)
 - .gitignore
@@ -29,17 +35,47 @@ bassball page will be an option to both view and update items.
 - server.js(main file to connect to server)
 - this readme
 
-### Images/Videos
+## Installation Instructions
+The project works with a lot of packages that need to be installed. The first thing
+you want to do after cloning/importing this project is to go to the command line 
+and enter the following commands:
+- __"npm install -g nodemon"__  
+- __"npm install express"__
+- __"npm install express-session"__ 
+- __"npm install express-handlebars"__
+- __"npm install sequelize"__
+- __"npm install connect-session-sequelize"__
+- __"npm install mysql2"__
+- __"npm install bcrypt"__
+- __"npm install dotenv"__
+
+These installs can be combined into 1 install except for nodemon (-g is needed).
+To make sure that everything is installed properly, run the command: 
+- __"npm list"__
+and check if there are any missing packages needed. Next, create a .env file
+in the root folder of the project. Enter into the file:
+
+DB_NAME='sportingGoods_db'
+DB_USER='[your username for mysql]'
+DB_PW='[your password for mysql]'
+
+Finally, to start the server you need to enter the command: __nodemon start__.
+Open the browser and go to: __http://localhost:3003/__ to open the website. 
+
+### Demo Videos
 
 __insert video/images here__
 
 
-### Additional Packages/Libraries
+### Additional Packages
 - express package
+- express-session package
+- express-handlebars package
 - sequelize package
-- handlebars package
+- connect-session-sequelize package
+- nodemon package
 - mysql2 package
-- scrypt package/ bcrypt package
+- bcrypt package
 - dotenv package
 
 
