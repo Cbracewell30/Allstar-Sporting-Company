@@ -17,6 +17,13 @@ router.get("/", (req, res) => {
       "filename",
       "description",
     ],
+    order: [["store_id", "DESC"]],
+    include: [
+      {
+        model: Store,
+        attributes: ["id", "store_name"],
+      },
+    ],
   })
     .then((dbProductData) => {
       const product = dbProductData.map((product) =>
@@ -45,6 +52,7 @@ router.get("/:id", (req, res) => {
       "filename",
       "description",
     ],
+
     include: [
       {
         model: Store,

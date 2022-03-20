@@ -31,6 +31,7 @@ router.get("/:store_id", (req, res) => {
       "filename",
       "description",
     ],
+    order: [["stock", "DESC"]],
     include: [
       {
         model: Store,
