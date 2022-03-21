@@ -1,6 +1,6 @@
 <div class="card">
   <h3 class="card-header">Add A New Product:</h3>
-  <form class="card-body new-products" id="new-products">
+  <form class="card-body" id="new-products">
     <label for="products-name" class="form-label">Product Name:</label>
     <input
       name="products-name"
@@ -28,7 +28,7 @@
     <input name="store_id" class="form-input" id="store_id" type="number" />
 
     {{! not necessary, alllowed to be null }}
-    <form
+    {{! <form
       ref="uploadForm"
       id="uploadForm"
       action="http://localhost:8000/upload"
@@ -37,12 +37,12 @@
     >
       <input type="file" name="filename" id="filename" />
 
-    </form>
+    </form> }}
 
     {{! not necessary, alllowed to be null }}
-    <label for="description" class="form-label">If you uploaded an image, please
+    {{! <label for="description" class="form-label">If you uploaded an image, please
       add a description.</label>
-    <input name="description" class="form-input" id="description" type="text" />
+    <input name="description" class="form-input" id="description" type="text" /> }}
 
     <button
       type="submit"
@@ -53,3 +53,4 @@
 </div>
 
 <script src="/js/add-products.js"></script>
+
