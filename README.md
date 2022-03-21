@@ -6,6 +6,7 @@
 - [Installation Instructions](#installation-instructions)
 - [Demo Videos](#demo-videos)
 - [Additional Packages](#additional-packages)
+- [Future Development](#future-development)
 - [Collaborators](#collaborators)
 
 
@@ -79,8 +80,11 @@ https://drive.google.com/file/d/1_dBt6EyCps5szn0QF4cXXBP6ZSXb5UOz/view
 - bcrypt package
 - dotenv package
 
+### Future Development
+- Images appear currently through the database & users cannot upload their own when editing or adding a product -> We would like to allow users be able to do this
+- Add rating feature where employee's can add product ratings/reviews of products
 
 ## Collaborators
-- Allison Demkovich (aka Cbracewell30)
-- Chris Bracewell (aka demkoa01)
+- Allison Demkovich (aka demkoa01)
+- Chris Bracewell (aka Cbracewell30)
 - Michael Brown (aka randomguy1234)
