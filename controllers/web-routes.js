@@ -30,7 +30,14 @@ router.get("/signup", (req, res) => {
 //route to get all products
 router.get("/products", (req, res) => {
   if (req.session.loggedIn) {
-    Product.findAll()
+    Product.findAll({
+      include: [
+        {
+          model: Store,
+          attributes: ["store_name"],
+        },
+      ],
+    })
       .then((dbProductData) => {
         const product = dbProductData.map((product) =>
           product.get({ plain: true })

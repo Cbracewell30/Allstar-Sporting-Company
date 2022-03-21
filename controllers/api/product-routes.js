@@ -19,13 +19,7 @@ router.get("/:id", (req, res) => {
   Product.findOne({
     where: {
       id: req.params.id,
-    },
-    include: [
-      {
-        model: Store,
-        attributes: ["id"],
-      },
-    ],
+    }
   })
     .then((dbProductData) => {
       //display message if id value has no product

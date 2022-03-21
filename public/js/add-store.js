@@ -6,25 +6,29 @@ async function newStoreFormHandler(event) {
     const store_location = document.querySelector('input[name="store-location"]').value;
   
     console.log(store_location, store_name);
-    //add new product using submitted data
-    const response = await fetch(`/api/stores/`, {
-      method: "POST",
-      body: JSON.stringify({
-        store_name,
-        store_location
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  
+//add store product using submitted data
+if (store_name && store_location) {
+  const response = await fetch(`/api/stores/`, {
+    method: "POST",
+    body: JSON.stringify({
+      store_name,
+      store_location,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
     //render page if input is good or give message to user if not good
-    if (response.ok) {
-      document.location.replace("/stores/");
+      if (response.ok) {
+        document.location.replace("/stores/");
+      } 
     } else {
       alert(response.statusText);
+      alert("You must answer all questions.");
     }
   }
+
+
   
   document
     .querySelector("#new-store")
