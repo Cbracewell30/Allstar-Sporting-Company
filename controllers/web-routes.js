@@ -118,4 +118,9 @@ router.get("/stores/:store_id", (req, res) => {
     });
 });
 
+//route to create new product, renders new product page
+router.get("/new-store", (req, res) => {
+  res.render("new-store");
+});
+
 module.exports = router;
