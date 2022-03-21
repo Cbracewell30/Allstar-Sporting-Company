@@ -1,0 +1,151 @@
+:root {
+  --primary: #1345b9;
+  --secondary: #d0d2d8;
+  --third: #66605f;
+  --fourth: #e54d38;
+  --fifth: #7b9cee;
+  --light: white;
+  --dark: black;
+  --border-radius: 0.3rem;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: var(--secondary);
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #007bff;
+}
+
+.topnav a {
+  float: left;
+  color: var(--light);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.nav {
+  justify-content: center;
+}
+
+.homepage {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.link-logout,
+.link {
+  color: var(--fourth);
+  font-size: 30px;
+}
+
+.link-nav {
+  color: var(--primary);
+  font-size: 30px;
+}
+
+.link:hover {
+  color: var(--third);
+}
+
+header {
+  text-align: center;
+  color: var(--dark);
+}
+
+p {
+  justify-content: center;
+}
+
+.card {
+  margin-right: 50px;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+
+* input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 0.25;
+}
+
+* input:focus {
+  background-color: var(--fifth);
+}
+
+.btn-primary {
+  color: var(--light);
+  background-color: var(--primary);
+  padding: 16px 32 px;
+  margin: 4px 2px;
+  width: 100%;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.new-products-btn {
+  color: var(--light);
+  background-color: var(--primary);
+  padding: 16px 32 px;
+  margin: 4px 2px;
+  width: 100%;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.edit-btn {
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.delete-products-btn {
+  background-color: var(--fourth);
+  color: white;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.img {
+  max-width: 150px;
+  height: 150px;
+}
+
+.products {
+  background-color: var(--light);
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-attachment: fixed;
+  background-position: 150%;
+}
+
+.site-page {
+  color: var(--light);
+  font-size: 100px;
+}

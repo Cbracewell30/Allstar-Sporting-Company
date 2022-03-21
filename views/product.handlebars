@@ -1,0 +1,27 @@
+<section>
+  <button type="submit" id="new-products" class="btn new-products-btn"><a class="link" href="/new-product">+ New Product</a></button>
+    
+    <h2>Current Inventory:</h2>
+
+    <ul class="product-list">
+      
+        {{#if product }}
+          <div class="card">
+          <div class="card-header d-flex flex-wrap products">
+        {{#each product as |product|}}
+         <div class="p-4 ">  {{> products-details product}}  </div>
+        {{/each}}
+        {{else}}
+        <div class="card">
+          <div class="card-header">
+            <h3>No products found!</h3>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </ul>
+
+</section>
+
+<script src="/js/add-products.js"></script>

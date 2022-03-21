@@ -1,0 +1,14 @@
+{{!-- creating product partial --}}
+
+<article>
+  <div class="">
+    <h4><a
+        href="/products/{{id}}"
+        id="{{id}}"
+      >{{name}}</a></h4>
+    <p>Price: {{price}}</p>
+    <p>Current # in Stock: {{stock}}</p>
+    <p>Store Location: {{store.store_name}}</p>
+          <img src="/images/{{filename}}" alt="{{description}}" class="img mt-4" /></p>
+  </div>
+</article>

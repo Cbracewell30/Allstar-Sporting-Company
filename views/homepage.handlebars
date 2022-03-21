@@ -1,0 +1,18 @@
+<nav class="nav">
+
+  {{#if loggedIn}}
+    <div>
+      <a class="link-nav p-2" href="/products">Product Inventory</a>
+      <a class="link-nav p-2" href="/stores"> Locations</a>
+      <a class="link-logout p-2" href="/" id="logout">Logout</a>
+
+    </div>
+  {{else}}
+    <a class="link p-2" href="/login">Login</a>
+  {{/if}}
+</nav>
+
+<div class="homepage">
+  <p>Please LOGIN to get to Inventory Pages OR if you are logged in, navigate to
+    'Product Inventory'.</p>
+</div>
