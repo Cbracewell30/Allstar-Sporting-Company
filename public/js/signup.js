@@ -8,10 +8,10 @@ const signupFormHandler = async (event) => {
   const store_id = document.querySelector("#store-signup").value;
 
   //checks to see if all values are supplied, if yes send the data to the users post route.
-  if (name && email && password && store_id) {
+  if (name && email && password )  {
     const response = await fetch("/api/users/", {
       method: "POST",
-      body: JSON.stringify({ name, email, password, store_id }),
+      body: JSON.stringify({ name, email, password, }),
       headers: { "Content-Type": "application/json" },
     });
 
